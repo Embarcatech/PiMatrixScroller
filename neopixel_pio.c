@@ -93,11 +93,18 @@ int main() {
   npInit(LED_PIN);
   npClear();
 
-  npSetLED(1, 255, 0, 0); // Define o primeiro LED como vermelho.
+  for (int i = 0; i < LED_COUNT; i++) {
+    npSetLED(i, 255, 0, 0);
+    npWrite(); // Escreve os dados nos LEDs.
+    sleep_ms(100);
+  }
+
+
+  //npSetLED(8, 255, 0, 0); // Define o primeiro LED como vermelho.
   
   // Aqui, você desenha nos LEDs.
 
-  npWrite(); // Escreve os dados nos LEDs.
+//  npWrite(); // Escreve os dados nos LEDs.
 
   // Não faz mais nada. Loop infinito.
   while (true) {
