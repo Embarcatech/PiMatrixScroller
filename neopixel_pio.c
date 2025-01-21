@@ -93,6 +93,7 @@ int main() {
   npInit(LED_PIN);
   npClear();
 
+  npSetLED(1, 255, 0, 0); // Define o primeiro LED como vermelho.
   
   // Aqui, você desenha nos LEDs.
 
