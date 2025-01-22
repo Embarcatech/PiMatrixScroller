@@ -82,8 +82,6 @@ void npWrite() {
 }
 
 
-
-
 int main() {
 
   // Inicializa entradas e saídas.
@@ -93,21 +91,41 @@ int main() {
   npInit(LED_PIN);
   npClear();
 
+
+
   for (int i = 0; i < LED_COUNT; i++) {
-    npSetLED(i, 255, 0, 0);
+    npSetLED(i, 127, 0, 0);
     npWrite(); // Escreve os dados nos LEDs.
     sleep_ms(100);
   }
 
 
-  //npSetLED(8, 255, 0, 0); // Define o primeiro LED como vermelho.
-  
-  // Aqui, você desenha nos LEDs.
+for (int i = 0; i < LED_COUNT; i++) {
+    npSetLED(i, 0, 127, 0);
+    npWrite(); // Escreve os dados nos LEDs.
+    sleep_ms(100);
+  }
 
-//  npWrite(); // Escreve os dados nos LEDs.
+for (int i = 0; i < LED_COUNT; i++) {
+    npSetLED(i, 0, 0, 127);
+    npWrite(); // Escreve os dados nos LEDs.
+    sleep_ms(100);
+  }
+
+
+for (int i = 0; i < LED_COUNT; i++)
+{
+  npSetLED(i, 0, 0, 0);
+  npWrite(); // Escreve os dados nos LEDs.
+  sleep_ms(100);
+
+}
+
 
   // Não faz mais nada. Loop infinito.
   while (true) {
     sleep_ms(1000);
+
+
   }
 }
